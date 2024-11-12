@@ -1,15 +1,21 @@
-AN IOS APPLICATION FOR TRACKING JOINT MOVEMENT.
-IT HELPS MEASURING RANGE OF MOTION FOR SPECIFIC JOINTS.
-MODELS USED ARE POSENET AND MOVENET (DEFAULT).
-PROVIDES GUIDANCE TO PATIENT DUIRING POSE ESTIMATION(eg. Show your side view)
+# iOS Application for Tracking Joint Movement
 
-JOINS ARE 
+An iOS application to track joint movements and measure the range of motion for specific joints. This app is useful for patients and healthcare professionals to monitor and guide joint mobility exercises.
 
-SHOULDER - DONE
-ELBOW - IN PROGRESS
-KNEE - IN PROGRESS
-HIP - IN PROGRESS
-ANKLE - IN PROGRESS
+## Features
+- Tracks range of motion for various joints using **PoseNet** and **MoveNet** models (MoveNet is the default).
+- Provides real-time guidance to patients during pose estimation (e.g., "Show your side view").
+- User-friendly interface designed to help patients improve their mobility and range of motion.
 
-![IMG_1834](https://github.com/user-attachments/assets/0f4f6748-8e14-444b-9eb5-a6f9cb2bef28)
-![IMG_1835](https://github.com/user-attachments/assets/21dc3c3c-4b4f-4993-8772-a2ed38aaa784)
+## Supported Joints
+- **Shoulder** - Completed
+- **Elbow** - In Progress
+- **Knee** - In Progress
+- **Hip** - In Progress
+- **Ankle** - In Progress
+
+## Screenshots
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0f4f6748-8e14-444b-9eb5-a6f9cb2bef28" alt="Screenshot 1" width="250"/>
+  <img src="https://github.com/user-attachments/assets/21dc3c3c-4b4f-4993-8772-a2ed38aaa784" alt="Screenshot 2" width="250"/>
+</p>
