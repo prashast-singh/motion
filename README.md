@@ -10,3 +10,6 @@ ELBOW - IN PROGRESS
 KNEE - IN PROGRESS
 HIP - IN PROGRESS
 ANKLE - IN PROGRESS
+
+![IMG_1834](https://github.com/user-attachments/assets/0f4f6748-8e14-444b-9eb5-a6f9cb2bef28)
+![IMG_1835](https://github.com/user-attachments/assets/21dc3c3c-4b4f-4993-8772-a2ed38aaa784)
