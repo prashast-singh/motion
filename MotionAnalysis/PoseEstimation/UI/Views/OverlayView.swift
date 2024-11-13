@@ -16,7 +16,7 @@ class OverlayView: UIImageView {
             ]
         }
 
-        private let warningLabel: UILabel = {
+        private let sideWarningLabel: UILabel = {
             let label = UILabel()
             label.text = "⚠︎ SHOW YOUR SIDE PROFILE"
             label.textColor = .red
@@ -25,6 +25,16 @@ class OverlayView: UIImageView {
             label.isHidden = true // Initially hidden
             return label
         }()
+        
+    private let frontWarningLabel: UILabel = {
+        let label = UILabel()
+        label.text = "⚠︎ SHOW YOUR FRONT PROFILE"
+        label.textColor = .red
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textAlignment = .center
+        label.isHidden = true // Initially hidden
+        return label
+    }()
       
         private static let lines = [
             (from: BodyPart.leftElbow, to: BodyPart.leftShoulder),
@@ -45,16 +55,21 @@ class OverlayView: UIImageView {
             setupWarningLabel()
         }
 
-        private func setupWarningLabel() {
-            addSubview(warningLabel)
-            warningLabel.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                warningLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-                warningLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
-            ])
-        }
+    private func setupWarningLabel() {
+        addSubview(sideWarningLabel)
+        addSubview(frontWarningLabel)
+        sideWarningLabel.translatesAutoresizingMaskIntoConstraints = false
+        frontWarningLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sideWarningLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            sideWarningLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            frontWarningLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            frontWarningLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
 
-        func draw(at image: UIImage, person: Person, shoulderSide: ShoulderSide) {
+
+    func draw(at image: UIImage, person: Person, shoulderSide: ShoulderSide, recordDirection: RecordDirection) {
             if context == nil {
                 UIGraphicsBeginImageContext(image.size)
                 guard let context = UIGraphicsGetCurrentContext() else {
@@ -72,7 +87,13 @@ class OverlayView: UIImageView {
                 drawRightShoulder(person: person)
             }
 
+        if recordDirection == .side {
             checkShoulderDistance(person: person)
+        }
+        if recordDirection == .front {
+            checkShoulderHipRatio(person: person)
+        }
+            
             context.setStrokeColor(UIColor.white.cgColor)
             context.strokePath()
             
@@ -83,17 +104,39 @@ class OverlayView: UIImageView {
         private func checkShoulderDistance(person: Person) {
             guard let leftShoulder = getKeyPointPosition(of: .leftShoulder, in: person),
                   let rightShoulder = getKeyPointPosition(of: .rightShoulder, in: person) else {
-                warningLabel.isHidden = true
+                sideWarningLabel.isHidden = true
                 return
             }
 
             let shoulderDistance = abs(leftShoulder.x - rightShoulder.x)
-            if shoulderDistance > 150 {
-                warningLabel.isHidden = false // Show warning if distance exceeds threshold
-            } else {
-                warningLabel.isHidden = true // Hide warning if within threshold
-            }
+            
+                if shoulderDistance > 200{
+                sideWarningLabel.isHidden = false // Show warning if distance exceeds threshold
+                } else {
+                sideWarningLabel.isHidden = true // Hide warning if within threshold
+                }
+
+            
         }
+    
+    private func checkShoulderHipRatio(person: Person){
+        guard let leftShoulder = getKeyPointPosition(of: .leftShoulder, in: person),
+              let rightShoulder = getKeyPointPosition(of: .rightShoulder, in: person),
+              let leftHip = getKeyPointPosition(of: .leftHip, in: person),
+              let rightHip = getKeyPointPosition(of: .rightHip, in: person) else {
+            frontWarningLabel.isHidden = true
+            return
+        }
+        
+        let ratio = abs(leftShoulder.x - rightShoulder.x)/abs(leftHip.x - rightHip.x)
+        if  ratio < 1.2 || abs(leftShoulder.x - rightShoulder.x)<200 {
+            frontWarningLabel.isHidden = false // Show warning if ratio exceeds threshold
+        } else {
+            frontWarningLabel.isHidden = true // Hide warning if ratio threshold
+        }
+        
+        
+    }
     /// nameing is opposite of drawRightShoulder because of mirroring
         private func drawRightShoulder(person: Person) {
             if let leftShoulder = getKeyPointPosition(of: .leftShoulder, in: person),

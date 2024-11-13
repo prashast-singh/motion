@@ -14,7 +14,7 @@ struct ShoulderView: View {
                 Text("LEFT SHOULDER MOVEMENTS")
                     .font(.system(size: 30, weight: .bold))
                 
-                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .left)) {
+                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .left, recordDirection: .side)) {
                     Text("FLEXION EXTENSION")
                         .font(.system(size: 25, weight: .bold))
                         .frame(width: 300, height: 100)
@@ -23,7 +23,7 @@ struct ShoulderView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 
-                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .left)) {
+                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .left, recordDirection: .front)) {
                     Text("ABDUCTION ADDUCTION")
                         .font(.system(size: 25, weight: .bold))
                         .frame(width: 300, height: 100)
@@ -35,7 +35,7 @@ struct ShoulderView: View {
                 Text("RIGHT SHOULDER MOVEMENTS")
                     .font(.system(size: 30, weight: .bold))
                 
-                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .right)) {
+                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .right, recordDirection: .side)) {
                     Text("FLEXION EXTENSION")
                         .font(.system(size: 25, weight: .bold))
                         .frame(width: 300, height: 100)
@@ -44,7 +44,7 @@ struct ShoulderView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 
-                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .right)) {
+                NavigationLink(destination: StoryboardViewWrapper(shoulderSide: .right, recordDirection: .front)) {
                     Text("ABDUCTION ADDUCTION")
                         .font(.system(size: 25, weight: .bold))
                         .frame(width: 300, height: 100)

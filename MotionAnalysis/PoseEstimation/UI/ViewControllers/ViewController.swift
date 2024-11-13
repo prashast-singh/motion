@@ -34,6 +34,7 @@ final class ViewController: UIViewController {
   private var delegate: Delegates = Constants.defaultDelegate
   private let minimumScore = Constants.minimumScore
   var selectedShoulder: ShoulderSide = .left
+  var recordDirection: RecordDirection = .front
   // MARK: Visualization
   // Relative location of `overlayView` to `previewView`.
   private var imageViewFrame: CGRect?
@@ -212,7 +213,7 @@ extension ViewController: CameraFeedManagerDelegate {
           }
 
           // Visualize the pose estimation result.
-          self.overlayView.draw(at: image, person: result, shoulderSide: self.selectedShoulder)
+            self.overlayView.draw(at: image, person: result, shoulderSide: self.selectedShoulder, recordDirection: self.recordDirection)
         }
       } catch {
         os_log("Error running pose estimation.", type: .error)
@@ -234,4 +235,9 @@ enum Constants {
 enum ShoulderSide {
     case left
     case right
+}
+
+enum RecordDirection {
+    case front
+    case side
 }
