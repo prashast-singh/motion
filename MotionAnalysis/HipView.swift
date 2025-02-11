@@ -21,26 +21,46 @@ import Foundation
 struct HipView : View {
     var body: some View {
         VStack(spacing: 20) {
-            Text("HIP MOVEMENTS")
+            Text("LEFT HIP MOVEMENTS")
                 .font(.system(size: 30, weight: .bold))
             
-            Button("FLEXION EXTENSTION") {
-                // Action for Flexion
+            NavigationLink(destination: StoryboardViewWrapper(joint: .hip , bodySide: .left, recordDirection: .side)) {
+                Text("FLEXION EXTENSION")
+                    .font(.system(size: 25, weight: .bold))
+                    .frame(width: 300, height: 100)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-            .font(.system(size: 25, weight: .bold))
-            .frame(width: 300, height: 100)
-            .background(Color.black)
-            .foregroundColor(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
             
-            Button("ABDUCTION ADDUCTION") {
-                // Action for Flexion
+            NavigationLink(destination: StoryboardViewWrapper(joint: .hip , bodySide: .left, recordDirection: .front)) {
+                Text("ABDUCTION ADDUCTION")
+                    .font(.system(size: 25, weight: .bold))
+                    .frame(width: 300, height: 100)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-            .font(.system(size: 25, weight: .bold))
-            .frame(width: 300, height: 100)
-            .background(Color.black)
-            .foregroundColor(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            
+            Text("RIGHT HIP MOVEMENTS")
+                .font(.system(size: 30, weight: .bold))
+            NavigationLink(destination: StoryboardViewWrapper(joint: .hip , bodySide: .right, recordDirection: .side)) {
+                Text("FLEXION EXTENSION")
+                    .font(.system(size: 25, weight: .bold))
+                    .frame(width: 300, height: 100)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            
+            NavigationLink(destination: StoryboardViewWrapper(joint: .hip , bodySide: .left, recordDirection: .front)) {
+                Text("ABDUCTION ADDUCTION")
+                    .font(.system(size: 25, weight: .bold))
+                    .frame(width: 300, height: 100)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
             
         }
         .padding()

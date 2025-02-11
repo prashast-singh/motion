@@ -329,7 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MotionAnalysis/Preview Content\"";
-				DEVELOPMENT_TEAM = 3CJ7JS8QSA;
+				DEVELOPMENT_TEAM = P6RD9VN837;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -345,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.prashastsingh.pose.MotionAnalysis;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prashastsingh.pose.MotionAnalysis1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -362,7 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MotionAnalysis/Preview Content\"";
-				DEVELOPMENT_TEAM = 3CJ7JS8QSA;
+				DEVELOPMENT_TEAM = P6RD9VN837;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -378,7 +378,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.prashastsingh.pose.MotionAnalysis;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prashastsingh.pose.MotionAnalysis1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

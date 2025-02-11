@@ -11,8 +11,8 @@ struct JointView: View {
                 
                     
                 
-                let joints = ["SHOULDER", "ELBOW", "KNEE", "HIP", "ANKLE"]
-                
+           //     let joints = ["SHOULDER", "ELBOW", "KNEE", "HIP", "ANKLE"]
+                let joints = ["SHOULDER", "ELBOW", "HIP", "KNEE"]
                 ForEach(joints, id: \.self) { joint in
                     NavigationLinkButton(joint: joint)
                 }
