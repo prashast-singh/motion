@@ -8,12 +8,11 @@ An iOS application to track joint movements and measure the range of motion for 
 - User-friendly interface designed to help patients improve their mobility and range of motion.
 
 ## Supported Joints
-- **Shoulder** - Completed
-- **Elbow** - In Progress
-- **Knee** - In Progress
-- **Hip** - In Progress
-- **Ankle** - In Progress
-
+- **Shoulder** 
+- **Elbow** 
+- **Knee** 
+- **Hip**
+- **Ankle**
 ## Screenshots
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0f4f6748-8e14-444b-9eb5-a6f9cb2bef28" alt="Screenshot 1" width="250"/>
